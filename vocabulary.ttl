@@ -18,7 +18,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-din-spec-91303/> a skos:ConceptScheme;
-  dct:creator "IEA Wind Task 43"@en;
+  dct:creator "Deutsche Institut für Normung e. V."@en;
   dct:description "SKOS Taxonomy of life-cycle phases according to DIN SPEC 91303"@en;
   dct:license <http://creativecommons.org/licenses/by/4.0/>;
   dct:title "Life Cycle Phase Specification DIN SPEC 91303"@en;
@@ -35,7 +35,7 @@ lcp:LifeCyclePhase a skos:Concept;
 lcp:Preparation a skos:Concept;
   skos:broader lcp:LifeCyclePhase;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-din-spec-91303/>;
-  skos:narrower lcp:Commissioning, lcp:Construction, lcp:Design, lcp:Planning, <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-din-spec-91303/PurchaseDiv\u000AFabrication>;
+  skos:narrower lcp:Commissioning, lcp:Construction, lcp:Design, lcp:Planning, lcp:PurchaseDivFabrication;
   skos:prefLabel "Preparation"@en, "Vorbereitung"@de .
 
 lcp:Planning a skos:Concept;
@@ -56,17 +56,14 @@ Development of power plant until permission."""@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-din-spec-91303/>;
   skos:prefLabel "Design"@en, "Konstruktion"@de .
 
-<https://www.ieawindtask43.org/ontoforge/life-cycle-phase-din-spec-91303/PurchaseDiv\u000AFabrication>
-  a skos:Concept;
+lcp:PurchaseDivFabrication a skos:Concept;
   skos:broader lcp:Preparation;
   skos:definition """Fertigung und Überwachung, Einkauf aller Komponenten, Zusammenbau der Sub-Systeme zur Auslieferung.
 Kaufverträge, Vertrag Netzanbindung, Versicherungen."""@de,
     """Manufacturing and supervision, purchase of components, assembly of sub-systems, delivery.
 Purchase contract, contract for grid connection, insurance."""@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-din-spec-91303/>;
-  skos:prefLabel """Beschaffung /
-Fertigung"""@de, """Purchase / 
-Fabrication"""@en .
+  skos:prefLabel "Beschaffung / Fertigung"@de, "Purchase / Fabrication"@en .
 
 lcp:Construction a skos:Concept;
   skos:broader lcp:Preparation;
