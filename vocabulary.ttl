@@ -23,42 +23,42 @@
   dct:license <http://creativecommons.org/licenses/by/4.0/>;
   dct:title "Life Cycle Phase Specification DIN SPEC 91303"@en;
   owl:versionInfo "0.0.1"@en;
-  skos:hasTopConcept lcp:Commissioning, lcp:Construction, lcp:Decommissioning, lcp:Design,
-    lcp:Dismantling, lcp:LifeCyclePhase, lcp:Maintenance, lcp:Planning, lcp:Planningofdismantling,
-    lcp:Preparation, lcp:ProductionDivOperation, <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/PurchaseDiv\u000AFabrication>,
-    lcp:Shutdown, lcp:Usage;
+  skos:hasTopConcept lcp:LifeCyclePhase;
   skos:prefLabel "LCP-DIN-91303"@en .
 
 lcp:LifeCyclePhase a skos:Concept;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
+  skos:narrower lcp:Decommissioning, lcp:Preparation, lcp:Usage;
   skos:prefLabel "Life Cycle Phase"@en;
   skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
 
 lcp:Preparation a skos:Concept;
+  skos:broader lcp:LifeCyclePhase;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Preparation"@en, "Vorbereitung"@de;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+  skos:narrower lcp:Commissioning, lcp:Construction, lcp:Design, lcp:Planning, <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/PurchaseDiv\u000AFabrication>;
+  skos:prefLabel "Preparation"@en, "Vorbereitung"@de .
 
 lcp:Planning a skos:Concept;
+  skos:broader lcp:Preparation;
   skos:definition """Conception of wind turbine.
 Site selection, wind study, nature conservation, purchase / lease of ground."""@en,
     """Konzipierung WEA.
 Standortauswahl, Windgutachten, Flora-Fauna-Schutz, Sicherung des Grundstück."""@de;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Planning"@en, "Planung"@de;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+  skos:prefLabel "Planning"@en, "Planung"@de .
 
 lcp:Design a skos:Concept;
+  skos:broader lcp:Preparation;
   skos:definition """Detailauslegung WEA inkl. Prototyp und Test bis zur Zertifizierung.
 Engineering Windpark bis zur Baugenehmigung."""@de,
     """Detailed design of wind turbine including prototyping, test and certification.
 Development of power plant until permission."""@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Design"@en, "Konstruktion"@de;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+  skos:prefLabel "Design"@en, "Konstruktion"@de .
 
 <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/PurchaseDiv\u000AFabrication>
   a skos:Concept;
+  skos:broader lcp:Preparation;
   skos:definition """Fertigung und Überwachung, Einkauf aller Komponenten, Zusammenbau der Sub-Systeme zur Auslieferung.
 Kaufverträge, Vertrag Netzanbindung, Versicherungen."""@de,
     """Manufacturing and supervision, purchase of components, assembly of sub-systems, delivery.
@@ -66,29 +66,30 @@ Purchase contract, contract for grid connection, insurance."""@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
   skos:prefLabel """Beschaffung /
 Fertigung"""@de, """Purchase / 
-Fabrication"""@en;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+Fabrication"""@en .
 
 lcp:Construction a skos:Concept;
+  skos:broader lcp:Preparation;
   skos:definition "Transport, Errichtung der WEA und der Infrastruktur, Bauüberwachung"@de,
     "Transportation, erection of wind turbines, construction of infrastructure, supervision."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Construction"@en, "Errichtung"@de;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+  skos:prefLabel "Construction"@en, "Errichtung"@de .
 
 lcp:Commissioning a skos:Concept;
+  skos:broader lcp:Preparation;
   skos:definition "Commissioning of wind turbines and infrastructur including test run and proof / acceptance by the grid operators as well as by authorities"@en,
     "Inbetriebsetzung der WEA und der Infrastruktur inkl. Probebetrieb und Prüfung bzw. Abnahme durch den WEA-, Netz-Betreiber und Genehmigungsbehörde"@de;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Commissioning"@en, "Inbetriebnahme"@de;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+  skos:prefLabel "Commissioning"@en, "Inbetriebnahme"@de .
 
 lcp:Usage a skos:Concept;
+  skos:broader lcp:LifeCyclePhase;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Nutzung"@de, "Usage"@en;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+  skos:narrower lcp:Maintenance, lcp:ProductionDivOperation, lcp:Shutdown;
+  skos:prefLabel "Nutzung"@de, "Usage"@en .
 
 lcp:ProductionDivOperation a skos:Concept;
+  skos:broader lcp:Usage;
   skos:definition """Einsatzplanung;
 Überwachung (Nachweisprüfung);
 Performanceanalyse;
@@ -111,38 +112,38 @@ Purchase of consultancies;
 Responsability for the facilities;
 O&M strategy"""@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Production / Operation"@en, "Produktion / Betrieb"@de;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+  skos:prefLabel "Production / Operation"@en, "Produktion / Betrieb"@de .
 
 lcp:Maintenance a skos:Concept;
+  skos:broader lcp:Usage;
   skos:definition "Regular service, maintenance, improvements."@en, """Wartung
 Inspektion
 Instandsetzung
 Verbesserung"""@de;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Instandhaltung"@de, "Maintenance"@en;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+  skos:prefLabel "Instandhaltung"@de, "Maintenance"@en .
 
 lcp:Shutdown a skos:Concept;
+  skos:broader lcp:Usage;
   skos:definition "Shutdown due to limited permission or technical defects or planned decommissioning."@en,
     "Stilllegung aufgrund rechtlicher Vorgaben, technischer Mängel oder bevorstehendem Rückbau"@de;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Shutdown"@en, "Stilllegung"@de;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+  skos:prefLabel "Shutdown"@en, "Stilllegung"@de .
 
 lcp:Decommissioning a skos:Concept;
+  skos:broader lcp:LifeCyclePhase;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Decommissioning"@en, "Rückabwicklung"@de;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+  skos:narrower lcp:Dismantling, lcp:Planningofdismantling;
+  skos:prefLabel "Decommissioning"@en, "Rückabwicklung"@de .
 
 lcp:Planningofdismantling a skos:Concept;
+  skos:broader lcp:Decommissioning;
   skos:definition "Preparation of dismantling, purchase of components."@en, "Vorbereitung des Rückbaus"@de;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Planning of dismantling"@en, "Rückbau-Planung"@de;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+  skos:prefLabel "Planning of dismantling"@en, "Rückbau-Planung"@de .
 
 lcp:Dismantling a skos:Concept;
+  skos:broader lcp:Decommissioning;
   skos:definition "Abbau, Wiederverwertung, Entsorgung"@de, "Dismantling, recycling, disposal"@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/>;
-  skos:prefLabel "Dismantling"@en, "Rückbau"@de;
-  skos:topConceptOf <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
+  skos:prefLabel "Dismantling"@en, "Rückbau"@de .
