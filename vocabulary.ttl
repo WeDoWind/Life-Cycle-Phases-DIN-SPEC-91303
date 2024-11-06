@@ -15,6 +15,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix wpl: <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-process-taxonomy/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-din-spec-91303/> a skos:ConceptScheme;
@@ -129,6 +130,7 @@ lcp:Shutdown a skos:Concept;
 
 lcp:Decommissioning a skos:Concept;
   skos:broader lcp:LifeCyclePhase;
+  skos:exactMatch wpl:8Decomissioning;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-din-spec-91303/>;
   skos:narrower lcp:Dismantling, lcp:Planningofdismantling;
   skos:prefLabel "Decommissioning"@en, "Rückabwicklung"@de .
