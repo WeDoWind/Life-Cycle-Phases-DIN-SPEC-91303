@@ -107,7 +107,7 @@ Contracts / obligations;
 Trading of electricity;
 Insurances;
 Purchase of consultancies;
-Responsability for the facilities;
+Responsibility for the facilities;
 O&M strategy"""@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-din-spec-91303/>;
   skos:prefLabel "Production / Operation"@en, "Produktion / Betrieb"@de .
@@ -130,7 +130,7 @@ lcp:Shutdown a skos:Concept;
 
 lcp:Decommissioning a skos:Concept;
   skos:broader lcp:LifeCyclePhase;
-  skos:exactMatch wpl:8Decomissioning;
+  skos:exactMatch wpl:8Decommissioning;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/life-cycle-phase-din-spec-91303/>;
   skos:narrower lcp:Dismantling, lcp:Planningofdismantling;
   skos:prefLabel "Decommissioning"@en, "Rückabwicklung"@de .
